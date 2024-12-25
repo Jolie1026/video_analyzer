@@ -1,0 +1,67 @@
+# 视频分析器配置
+
+# 视频处理设置
+video:
+  max_resolution: [1920, 1080]  # 最大处理分辨率
+  frame_interval: 30           # 每30帧提取一帧（1秒一帧，适合50分钟视频）
+  chunk_size: 1000             # 每次处理的帧数
+  scene_threshold: 30.0        # 场景切换检测阈值
+
+# 音频处理设置
+audio:
+  sample_rate: 16000          # Whisper模型推荐采样率
+  channels: 1                 # 单声道，适合语音识别
+  format: "wav"               # 音频提取格式
+  chunk_duration: 300         # 音频分块处理时长（秒）
+
+# 模型设置
+models:
+  ocr:
+    name: "paddleocr"         # 使用PaddleOCR进行文字检测和识别
+    language: "ch"            # 中文模型
+    use_gpu: true            # 使用GPU处理
+    use_tensorrt: true       # 使用TensorRT加速
+    precision: "fp16"        # 使用FP16以优化性能
+    det_model_dir: "models/weights/ch_PP-OCRv4_det_infer"  # 检测模型路径
+    rec_model_dir: "models/weights/ch_PP-OCRv4_rec_infer"  # 识别模型路径
+    
+  speech:
+    name: "large"  # 使用Whisper large模型
+    language: "zh"            # 中文
+    batch_size: 32            # 增大GPU批处理大小以提高吞吐量
+    compute_type: "float16"   # 使用FP16以优化性能
+    
+  text:
+    name: "bert-base-chinese" # 中文BERT基础模型
+    max_length: 512          # 最大文本长度
+    device: "cuda"           # 使用GPU
+    batch_size: 24           # BERT批处理大小
+    use_amp: true           # 使用自动混合精度
+
+# 输出设置
+output:
+  format: "markdown"          # 输出格式为markdown
+  save_intermediates: true    # 保存中间结果
+  output_dir: "output"        # 结果保存目录
+  summary_template: |         # Markdown摘要模板
+    # 视频分析报告
+    
+    ## 基本信息
+    - 文件路径: {video_path}
+    - 时长: {duration}
+    - 分辨率: {resolution}
+    
+    ## 文本内容
+    {text_content}
+    
+    ## 语音内容
+    {speech_content}
+    
+    ## 关键词
+    {keywords}
+
+# 日志设置
+logging:
+  level: "INFO"
+  file: "logs/video_analyzer.log"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
