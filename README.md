@@ -60,17 +60,33 @@ pip install -e .
 
 ## Usage
 
-1. Basic usage:
+1. Graphical User Interface (GUI):
+```bash
+video-analyzer --gui
+```
+The GUI provides an intuitive interface with:
+- Language selection (English, Simplified Chinese, Korean)
+- Video file selection with file browser
+- Output file path configuration
+- System initialization
+- Enhanced Progress Display
+  - Real-time progress bars for each processing stage
+  - Detailed status messages
+  - Time remaining estimates
+  - Processing speed indicators
+- Results display
+
+2. Command Line Interface (CLI):
 ```bash
 video-analyzer path/to/your/video.mp4
 ```
 
-2. Specify configuration file:
+3. Specify configuration file:
 ```bash
 video-analyzer path/to/your/video.mp4 --config path/to/config.yaml
 ```
 
-3. Specify output file:
+4. Specify output file:
 ```bash
 video-analyzer path/to/your/video.mp4 --output path/to/output.md
 ```
@@ -229,17 +245,33 @@ pip install -e .
 
 ## 使用方法
 
-1. 基本使用：
+1. 图形用户界面（GUI）：
+```bash
+video-analyzer --gui
+```
+GUI提供直观的界面，包含：
+- 语言选择（英语、简体中文、韩语）
+- 视频文件选择器
+- 输出文件路径配置
+- 系统初始化
+- 增强的进度显示
+  - 每个处理阶段的实时进度条
+  - 详细的状态消息
+  - 剩余时间估计
+  - 处理速度指示器
+- 结果显示
+
+2. 命令行界面（CLI）：
 ```bash
 video-analyzer path/to/your/video.mp4
 ```
 
-2. 指定配置文件：
+3. 指定配置文件：
 ```bash
 video-analyzer path/to/your/video.mp4 --config path/to/config.yaml
 ```
 
-3. 指定输出文件：
+4. 指定输出文件：
 ```bash
 video-analyzer path/to/your/video.mp4 --output path/to/output.md
 ```
@@ -398,17 +430,33 @@ pip install -e .
 
 ## 사용법
 
-1. 기본 사용:
+1. 그래픽 사용자 인터페이스(GUI):
+```bash
+video-analyzer --gui
+```
+GUI는 다음과 같은 직관적인 인터페이스를 제공합니다:
+- 언어 선택(영어, 중국어 간체, 한국어)
+- 비디오 파일 선택기
+- 출력 파일 경로 구성
+- 시스템 초기화
+- 향상된 진행 상황 표시
+  - 각 처리 단계의 실시간 진행률 표시줄
+  - 상세 상태 메시지
+  - 남은 시간 추정
+  - 처리 속도 표시기
+- 결과 표시
+
+2. 명령줄 인터페이스(CLI):
 ```bash
 video-analyzer path/to/your/video.mp4
 ```
 
-2. 구성 파일 지정:
+3. 구성 파일 지정:
 ```bash
 video-analyzer path/to/your/video.mp4 --config path/to/config.yaml
 ```
 
-3. 출력 파일 지정:
+4. 출력 파일 지정:
 ```bash
 video-analyzer path/to/your/video.mp4 --output path/to/output.md
 ```
