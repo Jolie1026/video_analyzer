@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="video_analyzer",
-    version="1.0.0",
+    version="1.2.0",
     description="视频内容分析工具，支持文本识别、语音识别和关键词提取",
     author="Cline",
     packages=find_packages(),
@@ -22,7 +22,8 @@ setup(
         "jieba>=0.42.1",
         "scikit-learn>=1.0.0",
         "ffmpeg-python>=0.2.0",
-        "nltk>=3.8.1"
+        "nltk>=3.8.1",
+        "PyQt6>=6.4.0"
     ],
     entry_points={
         'console_scripts': [
